@@ -70,20 +70,20 @@
                         <circle cx="370" cy="130" r="4" fill="#FF0000"/>
                     </g>
                     
-                    <!-- Resistor (highlighted) -->
+                    <!-- Resistor (highlighted) - DIFFERENT HOLE -->
                     <g id="resistor">
                         <!-- Resistor body -->
-                        <rect x="320" y="125" width="20" height="40" fill="#D2691E" stroke="#8B4513" stroke-width="2" rx="2"/>
+                        <rect x="300" y="125" width="20" height="40" fill="#D2691E" stroke="#8B4513" stroke-width="2" rx="2"/>
                         <!-- Color bands -->
-                        <rect x="320" y="130" width="20" height="3" fill="#FF0000"/>
-                        <rect x="320" y="135" width="20" height="3" fill="#FF0000"/>
-                        <rect x="320" y="140" width="20" height="3" fill="#A52A2A"/>
-                        <rect x="320" y="150" width="20" height="3" fill="#FFD700"/>
+                        <rect x="300" y="130" width="20" height="3" fill="#FF0000"/>
+                        <rect x="300" y="135" width="20" height="3" fill="#FF0000"/>
+                        <rect x="300" y="140" width="20" height="3" fill="#A52A2A"/>
+                        <rect x="300" y="150" width="20" height="3" fill="#FFD700"/>
                         <!-- Legs -->
-                        <line x1="330" y1="125" x2="330" y2="110" stroke="#666" stroke-width="3"/>
-                        <line x1="330" y1="165" x2="330" y2="180" stroke="#666" stroke-width="3"/>
-                        <circle cx="330" cy="110" r="4" fill="#8B4513"/>
-                        <circle cx="330" cy="180" r="4" fill="#8B4513"/>
+                        <line x1="310" y1="125" x2="310" y2="110" stroke="#666" stroke-width="3"/>
+                        <line x1="310" y1="165" x2="310" y2="180" stroke="#666" stroke-width="3"/>
+                        <circle cx="310" cy="110" r="4" fill="#8B4513"/>
+                        <circle cx="310" cy="180" r="4" fill="#8B4513"/>
                     </g>
                     
                     <!-- Highlight the entire row -->
@@ -97,14 +97,27 @@
                     
                     <!-- Visual connection indicator -->
                     <g>
-                        <!-- Show LED negative connection -->
+                        <!-- Show both connections clearly -->
                         <circle cx="330" cy="110" r="6" fill="#2196F3" stroke="#1976D2" stroke-width="2"/>
                         <text x="330" y="95" text-anchor="middle" font-size="10" fill="#2196F3" font-weight="bold">LED −</text>
                         
+                        <circle cx="310" cy="110" r="6" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                        <text x="310" y="95" text-anchor="middle" font-size="10" fill="#8B4513" font-weight="bold">Resistor</text>
+                        
                         <!-- Connection line showing same row -->
-                        <line x1="270" y1="110" x2="335" y2="110" stroke="#FFA500" stroke-width="3" stroke-dasharray="5,3"/>
-                        <text x="300" y="105" text-anchor="middle" font-size="11" fill="#FFA500" font-weight="bold">Connected!</text>
+                        <line x1="315" y1="110" x2="325" y2="110" stroke="#FFA500" stroke-width="4"/>
+                        <text x="320" y="125" text-anchor="middle" font-size="11" fill="#FFA500" font-weight="bold">Same Row!</text>
+                        
+                        <!-- Arrow showing different holes -->
+                        <path d="M 280 85 L 290 85" stroke="#333" stroke-width="2" marker-end="url(#arrowblack)"/>
+                        <text x="250" y="88" font-size="10" fill="#333">Different holes</text>
                     </g>
+                    
+                    <defs>
+                        <marker id="arrowblack" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <polygon points="0 0, 6 3, 0 6" fill="#333"/>
+                        </marker>
+                    </defs>
                     
                     <defs>
                         <marker id="arroworange" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
