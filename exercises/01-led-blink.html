@@ -202,144 +202,217 @@
             </div>
         </div>
 
-        <!-- Step 3: Build the Circuit -->
+        <!-- Step 3a: Place the LED -->
         <div class="step-container">
             <div class="step-header">
                 <div class="step-number">3</div>
-                <h2>Build the Circuit</h2>
+                <h2>Step 1: Place the LED</h2>
             </div>
             
-            <p>Now let's connect everything. Follow these steps:</p>
+            <p>First, let's put the LED on the breadboard:</p>
             
             <div class="circuit-diagram">
-                <svg width="500" height="350" viewBox="0 0 500 350">
-                    <!-- Arduino Board -->
-                    <rect x="20" y="75" width="120" height="200" fill="#00979D" stroke="#005C5F" stroke-width="2" rx="5"/>
-                    <text x="80" y="60" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Arduino</text>
-                    
-                    <!-- USB Port -->
-                    <rect x="60" y="65" width="40" height="10" fill="#C0C0C0" stroke="#808080" stroke-width="1"/>
-                    
-                    <!-- Power jack -->
-                    <circle cx="40" cy="90" r="6" fill="#000" stroke="#333" stroke-width="1"/>
-                    
-                    <!-- Pin headers -->
-                    <g id="pins">
-                        <!-- Digital pins -->
-                        <rect x="130" y="90" width="8" height="60" fill="#333"/>
-                        <!-- Power pins -->
-                        <rect x="130" y="200" width="8" height="40" fill="#333"/>
-                    </g>
-                    
-                    <!-- Pin labels with background -->
-                    <rect x="145" y="88" width="45" height="20" fill="white" stroke="none" opacity="0.9"/>
-                    <text x="150" y="102" font-family="Arial" font-size="12" font-weight="bold">Pin 13</text>
-                    
-                    <rect x="145" y="208" width="35" height="20" fill="white" stroke="none" opacity="0.9"/>
-                    <text x="150" y="222" font-family="Arial" font-size="12" font-weight="bold">GND</text>
-                    
+                <svg width="400" height="250" viewBox="0 0 400 250">
                     <!-- Breadboard -->
-                    <rect x="250" y="100" width="200" height="150" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
+                    <rect x="50" y="50" width="300" height="150" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
+                    
+                    <!-- Breadboard rows highlight -->
+                    <rect x="140" y="90" width="120" height="20" fill="#FFE4B5" opacity="0.5" stroke="#FFA500" stroke-width="2"/>
+                    <rect x="140" y="120" width="120" height="20" fill="#FFE4B5" opacity="0.5" stroke="#FFA500" stroke-width="2"/>
                     
                     <!-- Breadboard holes -->
-                    <g opacity="0.3">
-                        <circle cx="270" cy="120" r="2" fill="#666"/>
-                        <circle cx="285" cy="120" r="2" fill="#666"/>
-                        <circle cx="300" cy="120" r="2" fill="#666"/>
-                        <circle cx="315" cy="120" r="2" fill="#666"/>
-                        <circle cx="330" cy="120" r="2" fill="#666"/>
+                    <g opacity="0.4">
+                        <circle cx="150" cy="100" r="3" fill="#666"/>
+                        <circle cx="170" cy="100" r="3" fill="#666"/>
+                        <circle cx="190" cy="100" r="3" fill="#666"/>
+                        <circle cx="210" cy="100" r="3" fill="#666"/>
+                        <circle cx="230" cy="100" r="3" fill="#666"/>
                         
-                        <circle cx="270" cy="135" r="2" fill="#666"/>
-                        <circle cx="285" cy="135" r="2" fill="#666"/>
-                        <circle cx="300" cy="135" r="2" fill="#666"/>
-                        <circle cx="315" cy="135" r="2" fill="#666"/>
-                        <circle cx="330" cy="135" r="2" fill="#666"/>
-                        
-                        <circle cx="270" cy="180" r="2" fill="#666"/>
-                        <circle cx="285" cy="180" r="2" fill="#666"/>
-                        <circle cx="300" cy="180" r="2" fill="#666"/>
-                        <circle cx="315" cy="180" r="2" fill="#666"/>
-                        <circle cx="330" cy="180" r="2" fill="#666"/>
-                        
-                        <circle cx="270" cy="195" r="2" fill="#666"/>
-                        <circle cx="285" cy="195" r="2" fill="#666"/>
-                        <circle cx="300" cy="195" r="2" fill="#666"/>
-                        <circle cx="315" cy="195" r="2" fill="#666"/>
-                        <circle cx="330" cy="195" r="2" fill="#666"/>
+                        <circle cx="150" cy="130" r="3" fill="#666"/>
+                        <circle cx="170" cy="130" r="3" fill="#666"/>
+                        <circle cx="190" cy="130" r="3" fill="#666"/>
+                        <circle cx="210" cy="130" r="3" fill="#666"/>
+                        <circle cx="230" cy="130" r="3" fill="#666"/>
                     </g>
                     
-                    <!-- LED -->
-                    <g id="led">
-                        <!-- LED body -->
-                        <ellipse cx="315" cy="135" rx="12" ry="15" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
-                        <!-- LED top (rounded) -->
-                        <path d="M 303 135 Q 315 120 327 135" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
-                        <!-- LED legs -->
-                        <line x1="310" y1="150" x2="310" y2="165" stroke="#666" stroke-width="2"/>
-                        <line x1="320" y1="150" x2="320" y2="165" stroke="#666" stroke-width="2"/>
-                        <!-- + symbol for long leg -->
-                        <text x="325" y="160" font-family="Arial" font-size="10" fill="#666">+</text>
+                    <!-- LED with animation -->
+                    <g id="led-placement">
+                        <ellipse cx="200" cy="60" rx="15" ry="20" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
+                        <path d="M 185 60 Q 200 40 215 60" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
+                        <line x1="193" y1="80" x2="193" y2="100" stroke="#666" stroke-width="3"/>
+                        <line x1="207" y1="80" x2="207" y2="130" stroke="#666" stroke-width="3"/>
+                        <text x="220" y="125" font-size="12" fill="#666">+ (long)</text>
+                        <text x="155" y="105" font-size="12" fill="#666">- (short)</text>
                     </g>
                     
-                    <!-- LED label -->
-                    <rect x="340" y="125" width="30" height="18" fill="white" stroke="none" opacity="0.9"/>
-                    <text x="345" y="138" font-family="Arial" font-size="12" font-weight="bold">LED</text>
-                    
-                    <!-- Resistor -->
-                    <g id="resistor">
-                        <rect x="305" y="180" width="20" height="35" fill="#D2691E" stroke="#8B4513" stroke-width="1" rx="2"/>
-                        <!-- Resistor bands -->
-                        <rect x="305" y="185" width="20" height="3" fill="#FF0000"/>
-                        <rect x="305" y="190" width="20" height="3" fill="#FF0000"/>
-                        <rect x="305" y="195" width="20" height="3" fill="#A52A2A"/>
-                        <rect x="305" y="205" width="20" height="3" fill="#FFD700"/>
-                        <!-- Resistor legs -->
-                        <line x1="315" y1="175" x2="315" y2="180" stroke="#666" stroke-width="2"/>
-                        <line x1="315" y1="215" x2="315" y2="220" stroke="#666" stroke-width="2"/>
-                    </g>
-                    
-                    <!-- Resistor label -->
-                    <rect x="335" y="188" width="35" height="18" fill="white" stroke="none" opacity="0.9"/>
-                    <text x="340" y="201" font-family="Arial" font-size="10" font-weight="bold">220Ω</text>
-                    
-                    <!-- Wires -->
-                    <!-- Red wire from Pin 13 to LED (positive leg) -->
-                    <path d="M 138 95 L 200 95 L 200 120 L 310 120 L 310 135" stroke="#FF0000" stroke-width="3" fill="none"/>
-                    <circle cx="138" cy="95" r="3" fill="#FF0000"/>
-                    <circle cx="310" cy="135" r="3" fill="#FF0000"/>
-                    
-                    <!-- Connection from LED negative to resistor -->
-                    <line x1="320" y1="165" x2="320" y2="175" stroke="#666" stroke-width="2"/>
-                    <line x1="320" y1="175" x2="315" y2="175" stroke="#666" stroke-width="2"/>
-                    
-                    <!-- Black wire from GND to resistor bottom -->
-                    <path d="M 138 215 L 200 215 L 200 230 L 315 230 L 315 220" stroke="#000000" stroke-width="3" fill="none"/>
-                    <circle cx="138" cy="215" r="3" fill="#000000"/>
-                    <circle cx="315" cy="220" r="3" fill="#000000"/>
-                    
-                    <!-- Labels for clarity -->
-                    <text x="25" y="310" font-family="Arial" font-size="11" fill="#666">Red wire: Pin 13 → LED (long leg/+)</text>
-                    <text x="25" y="325" font-family="Arial" font-size="11" fill="#666">Black wire: GND → Resistor → LED (short leg/-)</text>
+                    <!-- Arrow pointing down -->
+                    <path d="M 200 35 L 200 15" stroke="#E74C3C" stroke-width="3" marker-end="url(#arrowdown)"/>
+                    <defs>
+                        <marker id="arrowdown" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+                            <polygon points="5 0, 10 7, 0 7" fill="#E74C3C"/>
+                        </marker>
+                    </defs>
                 </svg>
             </div>
             
-            <ol style="text-align: left; max-width: 600px; margin: 20px auto;">
-                <li><strong>Put the LED on the breadboard</strong> - Push both legs into two different rows (not the same row!)</li>
-                <li><strong>Find the long leg</strong> - The long leg of the LED is positive (+)</li>
-                <li><strong>Connect red wire</strong> - Put one end in Arduino pin 13, other end in same row as LED's long leg</li>
-                <li><strong>Add the resistor</strong> - Put one end in same row as LED's short leg, other end in a different row</li>
-                <li><strong>Connect black wire</strong> - Put one end in Arduino GND, other end in same row as resistor's other leg</li>
-            </ol>
-            
-            <div class="tip-box">
-                <strong>Tip:</strong> The resistor protects your LED. Without it, the LED might burn out!
+            <div class="instruction-box">
+                <p>✓ Push the LED into the breadboard</p>
+                <p>✓ Each leg goes in a <strong>different row</strong></p>
+                <p>✓ Remember which leg is longer!</p>
             </div>
         </div>
 
-        <!-- Step 4: Write the Code -->
+        <!-- Step 3b: Connect Power Wire -->
         <div class="step-container">
             <div class="step-header">
                 <div class="step-number">4</div>
+                <h2>Step 2: Connect the Power (Red Wire)</h2>
+            </div>
+            
+            <p>Connect Arduino Pin 13 to the LED's long leg:</p>
+            
+            <div class="circuit-diagram">
+                <svg width="500" height="250" viewBox="0 0 500 250">
+                    <!-- Arduino (simplified) -->
+                    <rect x="20" y="50" width="100" height="150" fill="#00979D" stroke="#005C5F" stroke-width="2" rx="5"/>
+                    <text x="70" y="35" text-anchor="middle" font-size="14" font-weight="bold">Arduino</text>
+                    <rect x="110" y="70" width="8" height="40" fill="#333"/>
+                    <text x="125" y="80" font-size="11" font-weight="bold">Pin 13</text>
+                    
+                    <!-- Breadboard -->
+                    <rect x="200" y="50" width="250" height="150" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
+                    
+                    <!-- LED in place -->
+                    <ellipse cx="315" cy="100" rx="12" ry="15" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
+                    <line x1="310" y1="115" x2="310" y2="125" stroke="#666" stroke-width="2"/>
+                    <line x1="320" y1="115" x2="320" y2="135" stroke="#666" stroke-width="2"/>
+                    
+                    <!-- Red wire -->
+                    <path d="M 118 75 Q 150 75 150 100 L 310 100" stroke="#FF0000" stroke-width="4" fill="none"/>
+                    <circle cx="118" cy="75" r="4" fill="#FF0000"/>
+                    <circle cx="310" cy="100" r="4" fill="#FF0000"/>
+                    
+                    <!-- Highlight connection point -->
+                    <circle cx="310" cy="100" r="15" fill="#FFE4B5" opacity="0.5" stroke="#FFA500" stroke-width="2" stroke-dasharray="3,3">
+                        <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            
+            <div class="instruction-box">
+                <p>✓ Red wire from <strong>Pin 13</strong> on Arduino</p>
+                <p>✓ Other end in same row as LED's <strong>long leg (+)</strong></p>
+            </div>
+        </div>
+
+        <!-- Step 3c: Add Resistor -->
+        <div class="step-container">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Step 3: Add the Resistor</h2>
+            </div>
+            
+            <p>Connect the resistor to the LED's short leg:</p>
+            
+            <div class="circuit-diagram">
+                <svg width="400" height="250" viewBox="0 0 400 250">
+                    <!-- Breadboard -->
+                    <rect x="50" y="50" width="300" height="150" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
+                    
+                    <!-- LED in place -->
+                    <ellipse cx="200" cy="90" rx="12" ry="15" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
+                    <line x1="195" y1="105" x2="195" y2="115" stroke="#666" stroke-width="2"/>
+                    <line x1="205" y1="105" x2="205" y2="125" stroke="#666" stroke-width="2"/>
+                    
+                    <!-- Red wire connected -->
+                    <line x1="50" y1="90" x2="195" y2="90" stroke="#FF0000" stroke-width="3"/>
+                    
+                    <!-- Resistor -->
+                    <rect x="185" y="140" width="20" height="30" fill="#D2691E" stroke="#8B4513" stroke-width="2" rx="2"/>
+                    <line x1="195" y1="135" x2="195" y2="140" stroke="#666" stroke-width="2"/>
+                    <line x1="195" y1="170" x2="195" y2="180" stroke="#666" stroke-width="2"/>
+                    
+                    <!-- Highlight areas -->
+                    <rect x="180" y="110" width="30" height="20" fill="#FFE4B5" opacity="0.5" stroke="#FFA500" stroke-width="2"/>
+                    <rect x="180" y="175" width="30" height="20" fill="#FFE4B5" opacity="0.5" stroke="#FFA500" stroke-width="2"/>
+                    
+                    <!-- Labels -->
+                    <text x="220" y="120" font-size="11" fill="#666">LED short leg</text>
+                    <text x="220" y="155" font-size="11" fill="#666">220Ω</text>
+                    <text x="220" y="185" font-size="11" fill="#666">Different row!</text>
+                </svg>
+            </div>
+            
+            <div class="instruction-box">
+                <p>✓ One end in same row as LED's <strong>short leg (-)</strong></p>
+                <p>✓ Other end in a <strong>different row</strong></p>
+                <p>✓ Direction doesn't matter for resistors</p>
+            </div>
+        </div>
+
+        <!-- Step 3d: Complete Circuit -->
+        <div class="step-container">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>Step 4: Complete the Circuit (Black Wire)</h2>
+            </div>
+            
+            <p>Connect Arduino GND to complete the circuit:</p>
+            
+            <div class="circuit-diagram">
+                <svg width="500" height="250" viewBox="0 0 500 250">
+                    <!-- Arduino (simplified) -->
+                    <rect x="20" y="50" width="100" height="150" fill="#00979D" stroke="#005C5F" stroke-width="2" rx="5"/>
+                    <text x="70" y="35" text-anchor="middle" font-size="14" font-weight="bold">Arduino</text>
+                    <rect x="110" y="140" width="8" height="40" fill="#333"/>
+                    <text x="125" y="155" font-size="11" font-weight="bold">GND</text>
+                    
+                    <!-- Breadboard with complete circuit -->
+                    <rect x="200" y="50" width="250" height="150" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
+                    
+                    <!-- LED -->
+                    <ellipse cx="315" cy="90" rx="12" ry="15" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
+                    <line x1="310" y1="105" x2="310" y2="115" stroke="#666" stroke-width="2"/>
+                    <line x1="320" y1="105" x2="320" y2="125" stroke="#666" stroke-width="2"/>
+                    
+                    <!-- Resistor -->
+                    <rect x="305" y="140" width="20" height="30" fill="#D2691E" stroke="#8B4513" stroke-width="2" rx="2"/>
+                    <line x1="315" y1="135" x2="315" y2="140" stroke="#666" stroke-width="2"/>
+                    <line x1="315" y1="170" x2="315" y2="180" stroke="#666" stroke-width="2"/>
+                    
+                    <!-- Red wire -->
+                    <path d="M 118 75 Q 150 75 150 90 L 310 90" stroke="#FF0000" stroke-width="3" fill="none"/>
+                    
+                    <!-- Black wire -->
+                    <path d="M 118 155 Q 150 155 150 180 L 315 180" stroke="#000000" stroke-width="4" fill="none"/>
+                    <circle cx="118" cy="155" r="4" fill="#000000"/>
+                    <circle cx="315" cy="180" r="4" fill="#000000"/>
+                    
+                    <!-- Current flow animation -->
+                    <circle r="3" fill="#FFE700">
+                        <animateMotion dur="3s" repeatCount="indefinite">
+                            <mpath href="#currentPath"/>
+                        </animateMotion>
+                    </circle>
+                    <path id="currentPath" d="M 118 75 Q 150 75 150 90 L 310 90 L 310 115 L 315 115 L 315 135 L 315 170 L 315 180 L 118 180 L 118 155" fill="none"/>
+                </svg>
+            </div>
+            
+            <div class="instruction-box">
+                <p>✓ Black wire from <strong>GND</strong> on Arduino</p>
+                <p>✓ Other end in same row as <strong>resistor's free end</strong></p>
+                <p>✓ You should see current flowing in a complete loop!</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>Done!</strong> Your circuit is complete. The electricity flows: Pin 13 → LED → Resistor → GND
+            </div>
+        </div>
+
+        <!-- Step 7: Write the Code -->
+        <div class="step-container">
+            <div class="step-header">
+                <div class="step-number">7</div>
                 <h2>Write the Code</h2>
             </div>
             
@@ -370,10 +443,10 @@ void loop() {
             </div>
         </div>
 
-        <!-- Step 5: Upload and Test -->
+        <!-- Step 8: Upload and Test -->
         <div class="step-container">
             <div class="step-header">
-                <div class="step-number">5</div>
+                <div class="step-number">8</div>
                 <h2>Upload and Test</h2>
             </div>
             
@@ -407,10 +480,10 @@ void loop() {
             <p style="margin-top: 20px;">The LED turns on and off with your chosen delay time.</p>
         </div>
 
-        <!-- Step 6: How It Works -->
+        <!-- Step 9: How It Works -->
         <div class="step-container">
             <div class="step-header">
-                <div class="step-number">6</div>
+                <div class="step-number">9</div>
                 <h2>How It Works</h2>
             </div>
             
