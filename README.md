@@ -11,8 +11,12 @@ Visit the interactive tutorial at: https://aaronshaf.github.io/arduino-tutorial/
 This tutorial series teaches Arduino basics with:
 - Step-by-step visual instructions
 - Interactive circuit simulations
-- Simple explanations at an 8th grade reading level
+- Simple explanations at a 5th grade reading level
 - Accessibility features including keyboard navigation and screen reader support
+
+## Claude.md Note
+
+When writing content for this tutorial, maintain a 5th grade reading level to ensure accessibility for young learners and non-native English speakers.
 
 ## Current Exercises
 

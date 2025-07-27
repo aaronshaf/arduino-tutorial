@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Your Arduino - LED Blink - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>Connect Your Arduino</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>First: Connect Your Arduino</h1>
+            <p>Before we start building, let's connect your Arduino to your computer:</p>
+        </div>
+
+        <div class="step-container">
+            <div class="circuit-diagram">
+                <svg width="500" height="300" viewBox="0 0 500 300">
+                    <!-- Computer -->
+                    <rect x="30" y="100" width="150" height="100" fill="#E0E0E0" stroke="#666" stroke-width="2" rx="5"/>
+                    <rect x="40" y="110" width="130" height="80" fill="#333" stroke="#000" stroke-width="2"/>
+                    <text x="105" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#666">Computer</text>
+                    
+                    <!-- USB Port on computer -->
+                    <rect x="170" y="140" width="20" height="10" fill="#666" stroke="#333"/>
+                    <text x="200" y="150" font-size="10" fill="#666">USB Port</text>
+                    
+                    <!-- USB Cable -->
+                    <path d="M 190 145 Q 250 145 250 180 Q 250 215 310 215" stroke="#333" stroke-width="8" fill="none"/>
+                    <rect x="180" y="140" width="30" height="10" fill="#666" rx="2"/>
+                    <rect x="290" y="210" width="30" height="10" fill="#C0C0C0" rx="2"/>
+                    
+                    <!-- Arduino -->
+                    <rect x="320" y="160" width="120" height="100" fill="#00979D" stroke="#005C5F" stroke-width="2" rx="5"/>
+                    <text x="380" y="145" text-anchor="middle" font-size="14" font-weight="bold">Arduino R3</text>
+                    
+                    <!-- USB Port on Arduino -->
+                    <rect x="310" y="210" width="30" height="10" fill="#C0C0C0" stroke="#808080"/>
+                    
+                    <!-- Power LED indicator -->
+                    <circle cx="350" cy="180" r="4" fill="#00FF00"/>
+                    <text x="360" y="185" font-size="10" fill="#FFF">PWR</text>
+                    
+                    <!-- Pin headers -->
+                    <rect x="430" y="180" width="8" height="60" fill="#333"/>
+                    
+                    <!-- Label arrows -->
+                    <path d="M 250 160 L 250 180" stroke="#E74C3C" stroke-width="2" marker-end="url(#arrowred)"/>
+                    <text x="250" y="155" text-anchor="middle" font-size="12" fill="#E74C3C" font-weight="bold">USB Cable</text>
+                    
+                    <defs>
+                        <marker id="arrowred" markerWidth="8" markerHeight="6" refX="7" refY="5" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#E74C3C"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="instruction-box">
+                <p>✓ Take the USB cable that came with your Arduino kit</p>
+                <p>✓ Plug the square end (USB-B) into your Arduino</p>
+                <p>✓ Plug the flat end (USB-A) into your computer</p>
+                <p>✓ The green PWR (power) LED on your Arduino should light up</p>
+            </div>
+
+            <div class="info-box">
+                <strong>What the USB cable does:</strong>
+                <ul style="text-align: left; margin: 10px 0;">
+                    <li>Provides 5V power to run your Arduino</li>
+                    <li>Allows you to upload code from your computer</li>
+                    <li>Lets your Arduino send messages back to your computer</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> If the power LED doesn't turn on, try a different USB port on your computer. Some USB ports provide more power than others.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation exercise-nav">
+            <a href="01-intro.html" class="nav-button">← Previous</a>
+            <div class="progress-indicator">
+                <span class="step-count">Step 2 of 11</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 18%"></div>
+                </div>
+            </div>
+            <a href="01-breadboard.html" class="nav-button">Next →</a>
+        </div>
+    </div>
+
+    <script type="module">
+        // No JavaScript needed for this page
+    </script>
+</body>
+</html>
