@@ -136,8 +136,17 @@
             </div>
         </div>
 
-        <!-- Navigation will be inserted here by JavaScript -->
-        <div class="navigation"></div>
+        <!-- Navigation -->
+        <div class="navigation exercise-nav">
+            <a href="../index.html" class="nav-button">← Back to Menu</a>
+            <div class="progress-indicator">
+                <span class="step-count">Step 1 of 10</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 10%"></div>
+                </div>
+            </div>
+            <a href="01-breadboard.html" class="nav-button">Next →</a>
+        </div>
     </div>
 
     <!-- Component Modal -->
@@ -153,11 +162,9 @@
     </div>
 
     <script type="module">
-        import { initializeNavigation } from '../js/components/exercise-nav.js';
         import { initModal } from '../js/components/modal.js';
         
         document.addEventListener('DOMContentLoaded', () => {
-            initializeNavigation();
             initModal();
         });
     </script>

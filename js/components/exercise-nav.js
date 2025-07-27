@@ -27,10 +27,24 @@ export const exercisePages = {
  */
 function getCurrentPageInfo() {
     const path = window.location.pathname;
-    const filename = path.split('/').pop();
+    let filename = path.split('/').pop() || '';
+    
+    // Add .html extension if missing
+    if (filename && !filename.includes('.html')) {
+        filename = filename + '.html';
+    }
+    
+    // Handle case where there's no filename
+    if (!filename) {
+        console.error('No filename found in path:', path);
+        return { exercise: null, pageIndex: -1, currentFile: '' };
+    }
+    
     const exercise = filename.substring(0, 2); // '01', '02', etc.
     const pages = exercisePages[exercise] || [];
     const pageIndex = pages.findIndex(page => page.file === filename);
+    
+    console.log('Navigation debug:', { path, filename, exercise, pageIndex, pages });
     
     return { exercise, pageIndex, currentFile: filename };
 }

@@ -60,16 +60,23 @@
             </div>
         </div>
 
-        <!-- Navigation will be inserted here by JavaScript -->
-        <div class="navigation"></div>
+        <!-- Navigation -->
+        <div class="navigation exercise-nav">
+            <a href="01-upload.html" class="nav-button">← Previous</a>
+            <div class="progress-indicator">
+                <span class="step-count">Step 9 of 10</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            <a href="01-how-it-works.html" class="nav-button">Next →</a>
+        </div>
     </div>
 
     <script type="module">
-        import { initializeNavigation } from '../js/components/exercise-nav.js';
         import { initLEDSimulation } from './js/exercise1-led.js';
         
         document.addEventListener('DOMContentLoaded', () => {
-            initializeNavigation();
             initLEDSimulation();
             
             // Update code preview when slider changes

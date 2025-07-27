@@ -105,16 +105,21 @@
             </div>
         </div>
 
-        <!-- Navigation will be inserted here by JavaScript -->
-        <div class="navigation"></div>
+        <!-- Navigation -->
+        <div class="navigation exercise-nav">
+            <a href="01-add-resistor.html" class="nav-button">← Previous</a>
+            <div class="progress-indicator">
+                <span class="step-count">Step 6 of 10</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                </div>
+            </div>
+            <a href="01-write-code.html" class="nav-button">Next →</a>
+        </div>
     </div>
 
     <script type="module">
-        import { initializeNavigation } from '../js/components/exercise-nav.js';
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeNavigation();
-        });
+        // No JavaScript needed for this page
     </script>
 </body>
 </html>
