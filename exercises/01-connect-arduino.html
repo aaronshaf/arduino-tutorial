@@ -29,20 +29,25 @@
                     <text x="105" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#666">Computer</text>
                     
                     <!-- USB Port on computer -->
-                    <rect x="170" y="140" width="20" height="10" fill="#666" stroke="#333"/>
-                    <text x="200" y="150" font-size="10" fill="#666">USB Port</text>
+                    <rect x="180" y="140" width="20" height="10" fill="#666" stroke="#333"/>
                     
                     <!-- USB Cable -->
-                    <path d="M 190 145 Q 250 145 250 180 Q 250 215 310 215" stroke="#333" stroke-width="8" fill="none"/>
-                    <rect x="180" y="140" width="30" height="10" fill="#666" rx="2"/>
-                    <rect x="290" y="210" width="30" height="10" fill="#C0C0C0" rx="2"/>
+                    <path d="M 200 145 Q 250 145 250 180 Q 250 215 300 215" stroke="#333" stroke-width="8" fill="none"/>
+                    
+                    <!-- USB-A connector (computer end) -->
+                    <rect x="190" y="141" width="15" height="8" fill="#666" rx="1"/>
+                    <rect x="186" y="143" width="4" height="4" fill="#C0C0C0"/>
+                    
+                    <!-- USB-B connector (Arduino end) -->
+                    <rect x="295" y="211" width="15" height="8" fill="#C0C0C0" rx="1"/>
+                    <rect x="310" y="213" width="4" height="4" fill="#666"/>
                     
                     <!-- Arduino -->
                     <rect x="320" y="160" width="120" height="100" fill="#00979D" stroke="#005C5F" stroke-width="2" rx="5"/>
                     <text x="380" y="145" text-anchor="middle" font-size="14" font-weight="bold">Arduino R3</text>
                     
                     <!-- USB Port on Arduino -->
-                    <rect x="310" y="210" width="30" height="10" fill="#C0C0C0" stroke="#808080"/>
+                    <rect x="300" y="210" width="20" height="10" fill="#C0C0C0" stroke="#808080"/>
                     
                     <!-- Power LED indicator -->
                     <circle cx="350" cy="180" r="4" fill="#00FF00"/>
@@ -51,13 +56,19 @@
                     <!-- Pin headers -->
                     <rect x="430" y="180" width="8" height="60" fill="#333"/>
                     
-                    <!-- Label arrows -->
-                    <path d="M 250 160 L 250 180" stroke="#E74C3C" stroke-width="2" marker-end="url(#arrowred)"/>
-                    <text x="250" y="155" text-anchor="middle" font-size="12" fill="#E74C3C" font-weight="bold">USB Cable</text>
+                    <!-- Labels -->
+                    <text x="250" y="165" text-anchor="middle" font-size="12" fill="#E74C3C" font-weight="bold">USB Cable</text>
+                    
+                    <!-- Arrows pointing to connectors -->
+                    <path d="M 140 125 L 180 135" stroke="#666" stroke-width="1.5" marker-end="url(#arrowgray)"/>
+                    <text x="100" y="120" font-size="10" fill="#666">USB-A (flat)</text>
+                    
+                    <path d="M 360 235 L 315 225" stroke="#666" stroke-width="1.5" marker-end="url(#arrowgray)"/>
+                    <text x="370" y="240" font-size="10" fill="#666">USB-B (square)</text>
                     
                     <defs>
-                        <marker id="arrowred" markerWidth="8" markerHeight="6" refX="7" refY="5" orient="auto">
-                            <polygon points="0 0, 8 3, 0 6" fill="#E74C3C"/>
+                        <marker id="arrowgray" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <polygon points="0 0, 6 3, 0 6" fill="#666"/>
                         </marker>
                     </defs>
                 </svg>
