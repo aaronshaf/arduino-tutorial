@@ -209,22 +209,37 @@
                     <!-- Center gap -->
                     <rect x="170" y="80" width="10" height="120" fill="#E0E0E0"/>
                     
-                    <!-- Breadboard rows highlight -->
-                    <rect x="85" y="110" width="75" height="15" fill="#FFE4B5" opacity="0.6" stroke="#FFA500" stroke-width="2"/>
-                    <rect x="85" y="140" width="75" height="15" fill="#FFE4B5" opacity="0.6" stroke="#FFA500" stroke-width="2"/>
+                    <!-- Breadboard holes -->
+                    <g fill="#999" opacity="0.5">
+                        <!-- Left side -->
+                        <circle cx="100" cy="120" r="3"/><circle cx="120" cy="120" r="3"/><circle cx="140" cy="120" r="3"/><circle cx="160" cy="120" r="3"/>
+                        <circle cx="100" cy="140" r="3"/><circle cx="120" cy="140" r="3"/><circle cx="140" cy="140" r="3"/><circle cx="160" cy="140" r="3"/>
+                        <!-- Right side -->
+                        <circle cx="190" cy="120" r="3"/><circle cx="210" cy="120" r="3"/><circle cx="230" cy="120" r="3"/><circle cx="250" cy="120" r="3"/>
+                        <circle cx="190" cy="140" r="3"/><circle cx="210" cy="140" r="3"/><circle cx="230" cy="140" r="3"/><circle cx="250" cy="140" r="3"/>
+                    </g>
                     
                     <!-- LED with proper positioning -->
                     <g id="led-placement">
                         <ellipse cx="175" cy="50" rx="15" ry="20" fill="#FF0000" stroke="#8B0000" stroke-width="2"/>
                         <path d="M 160 50 Q 175 30 190 50" fill="#FF6666" opacity="0.6"/>
-                        <line x1="168" y1="70" x2="168" y2="117" stroke="#666" stroke-width="3"/>
-                        <line x1="182" y1="70" x2="182" y2="147" stroke="#666" stroke-width="3"/>
-                        <text x="195" y="145" font-size="11" fill="#666">+ (long)</text>
-                        <text x="125" y="122" font-size="11" fill="#666">- (short)</text>
+                        <!-- Short leg goes to left side -->
+                        <line x1="168" y1="70" x2="160" y2="120" stroke="#666" stroke-width="3"/>
+                        <circle cx="160" cy="120" r="4" fill="#666"/>
+                        <!-- Long leg goes to right side -->
+                        <line x1="182" y1="70" x2="190" y2="140" stroke="#666" stroke-width="3"/>
+                        <circle cx="190" cy="140" r="4" fill="#666"/>
                     </g>
                     
+                    <!-- Labels with clear background -->
+                    <rect x="90" y="95" width="60" height="18" fill="white" opacity="0.9" rx="3"/>
+                    <text x="120" y="108" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">- (short)</text>
+                    
+                    <rect x="200" y="145" width="55" height="18" fill="white" opacity="0.9" rx="3"/>
+                    <text x="227" y="158" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">+ (long)</text>
+                    
                     <!-- Arrow pointing down -->
-                    <path d="M 175 20 L 175 30" stroke="#E74C3C" stroke-width="3" marker-end="url(#arrowdown2)"/>
+                    <path d="M 175 20 L 175 28" stroke="#E74C3C" stroke-width="3" marker-end="url(#arrowdown2)"/>
                     <defs>
                         <marker id="arrowdown2" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
                             <path d="M 0 0 L 5 9 L 10 0" fill="#E74C3C"/>
@@ -232,7 +247,7 @@
                     </defs>
                     
                     <!-- Note about gap -->
-                    <text x="175" y="220" text-anchor="middle" font-size="10" fill="#666">LED legs cross the center gap</text>
+                    <text x="175" y="220" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">LED legs must be on different sides of the gap</text>
                 </svg>
             </div>
             
