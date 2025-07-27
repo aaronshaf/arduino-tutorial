@@ -63,21 +63,23 @@ export const componentInfo = {
     breadboard: {
         title: "Breadboard",
         image: `<svg width="150" height="150" viewBox="0 0 150 150">
-            <rect x="20" y="40" width="110" height="70" fill="#F5F5DC" stroke="#8B8970" stroke-width="2"/>
-            <rect x="20" y="40" width="110" height="12" fill="#FFE4B5"/>
-            <rect x="20" y="98" width="110" height="12" fill="#E6E6FA"/>
+            <rect x="25" y="45" width="100" height="60" fill="#FFFFFF" stroke="#666" stroke-width="2"/>
+            <rect x="72" y="45" width="6" height="60" fill="#E0E0E0"/>
             <g fill="#666">
-                <circle cx="35" cy="65" r="2"/><circle cx="50" cy="65" r="2"/><circle cx="65" cy="65" r="2"/><circle cx="80" cy="65" r="2"/><circle cx="95" cy="65" r="2"/>
-                <circle cx="35" cy="80" r="2"/><circle cx="50" cy="80" r="2"/><circle cx="65" cy="80" r="2"/><circle cx="80" cy="80" r="2"/><circle cx="95" cy="80" r="2"/>
+                <circle cx="35" cy="55" r="2"/><circle cx="50" cy="55" r="2"/><circle cx="65" cy="55" r="2"/>
+                <circle cx="85" cy="55" r="2"/><circle cx="100" cy="55" r="2"/><circle cx="115" cy="55" r="2"/>
+                <circle cx="35" cy="70" r="2"/><circle cx="50" cy="70" r="2"/><circle cx="65" cy="70" r="2"/>
+                <circle cx="85" cy="70" r="2"/><circle cx="100" cy="70" r="2"/><circle cx="115" cy="70" r="2"/>
+                <circle cx="35" cy="85" r="2"/><circle cx="50" cy="85" r="2"/><circle cx="65" cy="85" r="2"/>
+                <circle cx="85" cy="85" r="2"/><circle cx="100" cy="85" r="2"/><circle cx="115" cy="85" r="2"/>
             </g>
-            <text x="10" y="48" font-size="10" fill="#FF0000" font-weight="bold">+</text>
-            <text x="10" y="107" font-size="10" fill="#0000FF" font-weight="bold">−</text>
+            <text x="75" y="120" text-anchor="middle" font-size="10" fill="#666">Center gap</text>
         </svg>`,
         description: `
             <p><strong>What is it?</strong> A breadboard is like LEGO for electronics - you can connect parts without permanent connections.</p>
             <p><strong>No soldering needed!</strong> Just push components into the holes.</p>
-            <p><strong>How it works:</strong> Holes in the same row are connected inside. The middle gap keeps the sides separate.</p>
-            <p><strong>Power rails:</strong> The + and − strips on the sides are for power connections.</p>
+            <p><strong>How it works:</strong> Holes in the same row are connected inside. The gap in the middle keeps the left and right sides separate.</p>
+            <p><strong>Your mini breadboard:</strong> Perfect for small projects like LED circuits!</p>
         `
     },
     jumper: {
