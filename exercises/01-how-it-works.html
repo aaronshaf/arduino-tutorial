@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - LED Blink - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>How It Works</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>How It Works</h1>
+            <p>Let's understand what's happening in our LED blink project:</p>
+        </div>
+
+        <div class="step-container">
+            <h2>The Complete Picture</h2>
+            
+            <div class="concept-box">
+                <h3>1. The Circuit</h3>
+                <p>Electricity flows in a loop:</p>
+                <div class="flow-diagram">
+                    <span class="flow-item">Arduino Pin 13 (5V)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-item">LED (+)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-item">LED (-)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-item">Resistor</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-item">Arduino GND (0V)</span>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h3>2. The Code</h3>
+                <dl>
+                    <dt><code>pinMode(13, OUTPUT)</code></dt>
+                    <dd>Tells Arduino that pin 13 will send out electricity (not receive it)</dd>
+                    
+                    <dt><code>digitalWrite(13, HIGH)</code></dt>
+                    <dd>Sends 5 volts to pin 13 → LED gets power → LED lights up!</dd>
+                    
+                    <dt><code>digitalWrite(13, LOW)</code></dt>
+                    <dd>Sends 0 volts to pin 13 → No power → LED turns off</dd>
+                    
+                    <dt><code>delay(1000)</code></dt>
+                    <dd>Waits 1000 milliseconds (1 second) before the next command</dd>
+                </dl>
+            </div>
+
+            <div class="concept-box">
+                <h3>3. Why Each Part Matters</h3>
+                <table class="component-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                        <th>What Happens Without It</th>
+                    </tr>
+                    <tr>
+                        <td>LED</td>
+                        <td>Converts electricity to light</td>
+                        <td>No visible output</td>
+                    </tr>
+                    <tr>
+                        <td>Resistor</td>
+                        <td>Limits current to safe level</td>
+                        <td>LED burns out from too much current</td>
+                    </tr>
+                    <tr>
+                        <td>Jumper Wires</td>
+                        <td>Connect components</td>
+                        <td>No complete circuit</td>
+                    </tr>
+                    <tr>
+                        <td>Breadboard</td>
+                        <td>Holds components and connects them</td>
+                        <td>Would need to solder everything</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="summary-box">
+                <h3>🎉 Congratulations!</h3>
+                <p>You've completed your first Arduino project! You now understand:</p>
+                <ul>
+                    <li>How to build a basic circuit</li>
+                    <li>How breadboards connect components</li>
+                    <li>How to write and upload Arduino code</li>
+                    <li>How digital outputs control LEDs</li>
+                </ul>
+                <p><strong>Next up:</strong> Try controlling multiple LEDs or adding a button!</p>
+            </div>
+        </div>
+
+        <!-- Navigation will be inserted here by JavaScript -->
+        <div class="navigation"></div>
+    </div>
+
+    <script type="module">
+        import { initializeNavigation } from '../js/components/exercise-nav.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+        });
+    </script>
+</body>
+</html>

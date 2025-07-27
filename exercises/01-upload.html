@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Test - LED Blink - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>Upload and Test</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>Upload and Test</h1>
+            <p>Time to upload your code and see it work!</p>
+        </div>
+
+        <div class="step-container">
+            <h2>Steps to Upload:</h2>
+            
+            <ol class="upload-steps">
+                <li>
+                    <strong>Connect Arduino to Computer</strong>
+                    <p>Make sure your USB cable is connected from Arduino to your computer</p>
+                </li>
+                
+                <li>
+                    <strong>Open Arduino IDE</strong>
+                    <p>Launch the Arduino software on your computer</p>
+                </li>
+                
+                <li>
+                    <strong>Select Your Board</strong>
+                    <p>Go to <code>Tools → Board → Arduino Uno</code></p>
+                </li>
+                
+                <li>
+                    <strong>Select the Port</strong>
+                    <p>Go to <code>Tools → Port</code> and select the port with Arduino (usually has Arduino in the name)</p>
+                </li>
+                
+                <li>
+                    <strong>Click Upload</strong>
+                    <p>Click the arrow button (→) or press <code>Ctrl+U</code> (Windows) or <code>Cmd+U</code> (Mac)</p>
+                </li>
+                
+                <li>
+                    <strong>Watch the Progress</strong>
+                    <p>You'll see "Compiling sketch..." then "Uploading..." at the bottom</p>
+                </li>
+            </ol>
+
+            <div class="success-box">
+                <h3>🎉 Success!</h3>
+                <p>When upload is complete, you should see:</p>
+                <ul>
+                    <li>"Done uploading" message</li>
+                    <li>Your LED starts blinking!</li>
+                    <li>1 second on, 1 second off, repeating forever</li>
+                </ul>
+            </div>
+
+            <div class="troubleshooting">
+                <h3>Troubleshooting:</h3>
+                <details>
+                    <summary>Wrong port selected?</summary>
+                    <p>Try unplugging and replugging your Arduino, then check Tools → Port again</p>
+                </details>
+                <details>
+                    <summary>Upload failed?</summary>
+                    <p>Make sure no other programs are using the port. Close and reopen Arduino IDE if needed.</p>
+                </details>
+                <details>
+                    <summary>LED not blinking?</summary>
+                    <p>Double-check your circuit connections. Make sure the LED is in the right way (long leg to positive).</p>
+                </details>
+            </div>
+        </div>
+
+        <!-- Navigation will be inserted here by JavaScript -->
+        <div class="navigation"></div>
+    </div>
+
+    <script type="module">
+        import { initializeNavigation } from '../js/components/exercise-nav.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+        });
+    </script>
+</body>
+</html>

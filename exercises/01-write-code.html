@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write the Code - LED Blink - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>Write the Code</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>Write the Code</h1>
+            <p>Now let's write the program to control our LED:</p>
+        </div>
+
+        <div class="step-container">
+            <div class="code-section">
+                <pre><code>// LED Blink Program
+// The LED is connected to pin 13
+
+void setup() {
+  // Tell Arduino that pin 13 is an output
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  // Turn the LED on
+  digitalWrite(13, HIGH);
+  
+  // Wait for 1 second (1000 milliseconds)
+  delay(1000);
+  
+  // Turn the LED off
+  digitalWrite(13, LOW);
+  
+  // Wait for 1 second
+  delay(1000);
+}</code></pre>
+            </div>
+
+            <div class="code-explanation">
+                <h3>Understanding the Code:</h3>
+                <dl>
+                    <dt><code>void setup()</code></dt>
+                    <dd>Runs once when Arduino starts. We use it to set up pin 13 as an output.</dd>
+                    
+                    <dt><code>pinMode(13, OUTPUT)</code></dt>
+                    <dd>Tells Arduino that pin 13 will send signals OUT (not receive them).</dd>
+                    
+                    <dt><code>void loop()</code></dt>
+                    <dd>Runs over and over forever. This is where our blinking happens.</dd>
+                    
+                    <dt><code>digitalWrite(13, HIGH)</code></dt>
+                    <dd>Sends 5V to pin 13, turning the LED ON.</dd>
+                    
+                    <dt><code>digitalWrite(13, LOW)</code></dt>
+                    <dd>Sends 0V to pin 13, turning the LED OFF.</dd>
+                    
+                    <dt><code>delay(1000)</code></dt>
+                    <dd>Pauses for 1000 milliseconds (1 second).</dd>
+                </dl>
+            </div>
+
+            <div class="tip-box">
+                <strong>Try this:</strong> Change the delay values to make the LED blink faster or slower. For example, try <code>delay(500)</code> for half a second, or <code>delay(2000)</code> for 2 seconds.
+            </div>
+        </div>
+
+        <!-- Navigation will be inserted here by JavaScript -->
+        <div class="navigation"></div>
+    </div>
+
+    <script type="module">
+        import { initializeNavigation } from '../js/components/exercise-nav.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+        });
+    </script>
+</body>
+</html>

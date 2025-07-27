@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try It Yourself - LED Blink - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>Try It Yourself</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>Try It Yourself!</h1>
+            <p>See how changing the delay time affects the blinking speed:</p>
+        </div>
+
+        <div class="step-container">
+            <div class="interactive-section">
+                <div class="led-container">
+                    <div class="led" id="interactive-led"></div>
+                </div>
+                
+                <div class="controls">
+                    <label for="delay-slider">
+                        Delay Time: 
+                        <input type="range" id="delay-slider" min="100" max="2000" value="1000" step="100">
+                        <span class="delay-value" id="delay-value">1000ms</span>
+                    </label>
+                </div>
+                
+                <div class="code-preview">
+                    <h3>Your Code Would Look Like:</h3>
+                    <pre><code>void loop() {
+  digitalWrite(13, HIGH);
+  delay(<span id="code-delay-on">1000</span>);   // LED on time
+  
+  digitalWrite(13, LOW);
+  delay(<span id="code-delay-off">1000</span>);   // LED off time
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="experiment-box">
+                <h3>Experiments to Try:</h3>
+                <ul>
+                    <li><strong>Fast Blink:</strong> Set delay to 100ms - Like a strobe light!</li>
+                    <li><strong>Slow Blink:</strong> Set delay to 2000ms - A leisurely pace</li>
+                    <li><strong>Medium Blink:</strong> Set delay to 500ms - Twice per second</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <strong>Real Arduino:</strong> On your actual Arduino, you would change the numbers in the <code>delay()</code> functions and re-upload the code to see the difference.
+            </div>
+        </div>
+
+        <!-- Navigation will be inserted here by JavaScript -->
+        <div class="navigation"></div>
+    </div>
+
+    <script type="module">
+        import { initializeNavigation } from '../js/components/exercise-nav.js';
+        import { initLEDSimulation } from './js/exercise1-led.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+            initLEDSimulation();
+            
+            // Update code preview when slider changes
+            const delaySlider = document.getElementById('delay-slider');
+            const codeDelayOn = document.getElementById('code-delay-on');
+            const codeDelayOff = document.getElementById('code-delay-off');
+            
+            delaySlider.addEventListener('input', () => {
+                const value = delaySlider.value;
+                codeDelayOn.textContent = value;
+                codeDelayOff.textContent = value;
+            });
+        });
+    </script>
+</body>
+</html>

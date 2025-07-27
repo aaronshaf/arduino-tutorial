@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE - Arduino Tutorial</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/exercise-nav.css">
+</head>
+<body>
+    <div class="container exercise-container">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="01-intro.html">Exercise 1: LED Blink</a> / 
+            <span>CURRENT_PAGE</span>
+        </nav>
+
+        <div class="exercise-header">
+            <h1>TITLE</h1>
+            <p>DESCRIPTION</p>
+        </div>
+
+        <!-- CONTENT GOES HERE -->
+
+        <!-- Navigation will be inserted here by JavaScript -->
+        <div class="navigation"></div>
+    </div>
+
+    <!-- Component Modal (if needed) -->
+    <div id="componentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content" tabindex="-1">
+            <button class="close" onclick="closeModal()" aria-label="Close modal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 id="modalTitle"></h2>
+            <div id="modalImage" aria-hidden="true"></div>
+            <div id="modalDescription"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeNavigation } from '../js/components/exercise-nav.js';
+        import { initModal } from '../js/components/modal.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+            initModal();
+        });
+    </script>
+</body>
+</html>
